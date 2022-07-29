@@ -1,6 +1,6 @@
 resource "aws_codebuild_project" "this" {
   name           = var.codebuild_name
-  service_role   = aws_iam_role.codebuild_role.arn
+  service_role   = aws_iam_role.codebuild.arn
   encryption_key = aws_kms_key.kms_key.arn
 
   artifacts {
@@ -8,7 +8,7 @@ resource "aws_codebuild_project" "this" {
   }
 
   environment {
-    compute_type                = "BUILD_GENERAL1_MEDIUM"
+    compute_type                = var.codebuild_compute_type
     image                       = var.codebuild_image
     image_pull_credentials_type = "CODEBUILD"
     type                        = "LINUX_CONTAINER"
@@ -20,7 +20,7 @@ resource "aws_codebuild_project" "this" {
   }
 
   source {
-    buildspec = "buildspec.yml"
+    buildspec = var.codebuild_buildspec_path
     type      = "CODEPIPELINE"
   }
 }

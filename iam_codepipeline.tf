@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "codepipeline_codestar" {
 
 data "aws_iam_policy_document" "codepipeline_codebuild" {
   statement {
-    resources = [aws_codebuild_project.codebuild.arn]
+    resources = [aws_codebuild_project.this.arn]
 
     actions = [
       "codebuild:StartBuild",

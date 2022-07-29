@@ -45,6 +45,18 @@ variable "codestar_arn" {
   type        = string
 }
 
+variable "codebuild_compute_type" {
+  description = "The Compute Type of the Codebuild Container"
+  type        = string
+  default     = "BUILD_GENERAL1_MEDIUM"
+}
+
+variable "codebuild_buildspec_path" {
+  description = "buildspec.yml location in the artifact"
+  type        = string
+  default     = "buildspec.yml"
+}
+
 variable "codebuild_image" {
   description = "Codebuild Image that will be use"
   type        = string

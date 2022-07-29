@@ -1,4 +1,4 @@
-resource "aws_iam_role" "codepipeline_role" {
+resource "aws_iam_role" "codepipeline" {
   name               = "${var.codepipeline_name}-role"
   assume_role_policy = data.aws_iam_policy_document.codepipeline_assume_role.json
 
@@ -8,7 +8,7 @@ resource "aws_iam_role" "codepipeline_role" {
   }
 }
 
-resource "aws_iam_role" "codebuild_role" {
+resource "aws_iam_role" "codebuild" {
   name               = "${var.codebuild_name}-role"
   assume_role_policy = data.aws_iam_policy_document.codebuild_assume_role.json
 
