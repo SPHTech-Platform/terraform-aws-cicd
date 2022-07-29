@@ -58,13 +58,13 @@ variable "codepipeline_additional_iam" {
 }
 
 variable "codebuild_additional_iam" {
-  description = "Additional IAM Policy document by Codebuild"
+  description = "Additional IAM Policy Document for Codebuild"
   type        = list(any)
   default     = []
 }
 
 variable "codepipeline_additional_stage" {
-  description = ""
+  description = "Additional IAM Policy Document for Codepipeline"
   type        = list(any)
   default     = []
 }
