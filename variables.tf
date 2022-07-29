@@ -46,25 +46,25 @@ variable "codestar_arn" {
 }
 
 variable "codebuild_image" {
-    description = "Codebuild Image that will be use"
-    type = string
-    default = "aws/codebuild/standard:5.0"
+  description = "Codebuild Image that will be use"
+  type        = string
+  default     = "aws/codebuild/standard:5.0"
 }
 
 variable "codepipeline_additional_iam" {
-    description = "Additional IAM Policy Document needed by Codepipeline"
-    type = list(any)
-    default = []
+  description = "Additional IAM Policy Document needed by Codepipeline"
+  type        = list(any)
+  default     = []
 }
 
 variable "codebuild_additional_iam" {
-    description = "Additional IAM Policy document by Codebuild"
-    type = list(any)
-    default = []
+  description = "Additional IAM Policy document by Codebuild"
+  type        = list(any)
+  default     = []
 }
 
 variable "codepipeline_additional_stage" {
-    description = ""
-    type = list(any)
-    default = []
+  description = ""
+  type        = list(any)
+  default     = []
 }

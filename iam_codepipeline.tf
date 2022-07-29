@@ -64,5 +64,5 @@ data "aws_iam_policy_document" "codepipeline_inline_policy" {
     data.aws_iam_policy_document.codepipeline_codebuild.json,
     data.aws_iam_policy_document.codepipeline_kms.json,
     data.aws_iam_policy_document.codepipeline_s3.json,
-  ] , var.codepipeline_additional_iam)
+  ], var.codepipeline_additional_iam)
 }

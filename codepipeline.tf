@@ -48,28 +48,28 @@ resource "aws_codepipeline" "main_pipeline" {
       }
     }
   }
-  
+
   dynamic "stage" {
     for_each = var.codepipeline_additional_stage
     content {
       name = stage.value["name"]
 
       dynamic "action" {
-          for_each = stage.value.action
-          content {
-            name = action.value.name
-            category         = action.value.category
-            owner            = action.value.owner
-            provider         = action.value.provider
-            version          = action.value.version
-            input_artifacts  = lookup(action.value, "input_artifacts", null)
-            output_artifacts = lookup(action.value, "output_artifacts", null)
-            configuration = lookup(action.value, "configuration", null)
-            role_arn = lookup(action.value, "role_arn", null)
-            run_order = lookup(action.value, "run_order", null)
-            region = lookup(action.value, "region", null)
-            namespace = lookup(action.value, "namespace", null)
-          }
+        for_each = stage.value.action
+        content {
+          name             = action.value.name
+          category         = action.value.category
+          owner            = action.value.owner
+          provider         = action.value.provider
+          version          = action.value.version
+          input_artifacts  = lookup(action.value, "input_artifacts", null)
+          output_artifacts = lookup(action.value, "output_artifacts", null)
+          configuration    = lookup(action.value, "configuration", null)
+          role_arn         = lookup(action.value, "role_arn", null)
+          run_order        = lookup(action.value, "run_order", null)
+          region           = lookup(action.value, "region", null)
+          namespace        = lookup(action.value, "namespace", null)
+        }
       }
     }
   }
