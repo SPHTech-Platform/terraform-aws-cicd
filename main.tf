@@ -1,4 +1,4 @@
-resource "aws_codepipeline" "main_pipeline" {
+resource "aws_codepipeline" "this" {
   name     = var.codepipeline_name
   role_arn = aws_iam_role.codepipeline_role.arn
 
