@@ -84,13 +84,6 @@ data "aws_iam_policy_document" "codebuild_logstream" {
   }
 }
 
-data "aws_iam_policy_document" "codebuild_secret_manager" {
-  statement {
-    resources = ["arn:aws:secretsmanager:*:*:secret:/github/org/sphtech*"]
-    actions   = ["secretsmanager:GetSecretValue"]
-  }
-}
-
 # permission for lambda role
 data "aws_iam_policy_document" "codebuild_iam" {
   statement {
@@ -114,7 +107,6 @@ data "aws_iam_policy_document" "codebuild_inline_policy" {
     data.aws_iam_policy_document.codebuild_kms.json,
     data.aws_iam_policy_document.codebuild_vpc.json,
     data.aws_iam_policy_document.codebuild_logstream.json,
-    data.aws_iam_policy_document.codebuild_secret_manager.json,
     data.aws_iam_policy_document.codebuild_iam.json
   ], var.codebuild_additional_iam)
 }
