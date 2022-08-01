@@ -7,13 +7,3 @@ resource "aws_iam_role" "codepipeline" {
     policy = data.aws_iam_policy_document.codepipeline_inline_policy.json
   }
 }
-
-resource "aws_iam_role" "codebuild" {
-  name               = "${var.codebuild_name}-role"
-  assume_role_policy = data.aws_iam_policy_document.codebuild_assume_role.json
-
-  inline_policy {
-    name   = var.codebuild_name
-    policy = data.aws_iam_policy_document.codebuild_inline_policy.json
-  }
-}

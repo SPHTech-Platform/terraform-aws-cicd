@@ -1,26 +1,20 @@
-resource "aws_codebuild_project" "this" {
-  name           = var.codebuild_name
-  service_role   = aws_iam_role.codebuild.arn
-  encryption_key = aws_kms_key.kms_key.arn
+module "codebuild" {
+  source = "github.com/hashicorp/SPHTech-Platform/terraform-aws-codebuild"
 
-  artifacts {
+  name                  = "var.codebuild_name"
+  description           = "codebuild for test project"
+  build_image           = "aws/codebuild/standard:5.0"
+  buildspec             = "./buildspec.yml"
+  artifacts_bucket_name = local.artifacts_bucket_name
+
+  artifacts = {
     type = "CODEPIPELINE"
   }
 
-  environment {
-    compute_type                = var.codebuild_compute_type
-    image                       = var.codebuild_image
-    image_pull_credentials_type = "CODEBUILD"
-    type                        = "LINUX_CONTAINER"
-
-    environment_variable {
+  environment_variables = [
+    {
       name  = "ENV"
-      value = var.env
+      value = "sandbox"
     }
-  }
-
-  source {
-    buildspec = var.codebuild_buildspec_path
-    type      = "CODEPIPELINE"
-  }
+  ]
 }
