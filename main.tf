@@ -44,7 +44,7 @@ resource "aws_codepipeline" "this" {
       output_artifacts = [local.codebuild_output_artifact_name]
 
       configuration = {
-        "ProjectName" = var.codebuild_name
+        "ProjectName" = module.codebuild.name
       }
     }
   }
