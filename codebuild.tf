@@ -1,5 +1,5 @@
 module "codebuild" {
-  source = "git@github.com:SPHTech-Platform/terraform-aws-codebuild.git"
+  source = "github.com/SPHTech-Platform/terraform-aws-codebuild"
 
   name                  = var.codebuild_name
   description           = var.codebuild_description
