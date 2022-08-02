@@ -39,9 +39,19 @@ variable "codebuild_name" {
   type        = string
 }
 
+variable "codebuild_description" {
+  description = "Description of the Codebuild"
+  type        = string
+  default     = ""
+}
 
 variable "codestar_arn" {
   description = "Codestar ARN for connecting to Github"
+  type        = string
+}
+
+variable "encryption_key_arn" {
+  description = "KMS Key"
   type        = string
 }
 

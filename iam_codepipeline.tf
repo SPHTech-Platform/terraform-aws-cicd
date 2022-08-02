@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "codepipeline_codestar" {
 
 data "aws_iam_policy_document" "codepipeline_codebuild" {
   statement {
-    resources = [aws_codebuild_project.this.arn]
+    resources = [module.codebuild.arn]
 
     actions = [
       "codebuild:StartBuild",
@@ -27,20 +27,6 @@ data "aws_iam_policy_document" "codepipeline_codebuild" {
   }
 }
 
-data "aws_iam_policy_document" "codepipeline_kms" {
-  statement {
-    resources = [aws_kms_key.kms_key.arn]
-
-    actions = [
-      "kms:DescribeKey",
-      "kms:GenerateDataKey",
-      "kms:Encrypt",
-      "kms:ReEncryptFrom",
-      "kms:ReEncryptTo",
-      "kms:Decrypt",
-    ]
-  }
-}
 
 data "aws_iam_policy_document" "codepipeline_s3" {
   statement {
@@ -62,7 +48,6 @@ data "aws_iam_policy_document" "codepipeline_inline_policy" {
   source_policy_documents = concat([
     data.aws_iam_policy_document.codepipeline_codestar.json,
     data.aws_iam_policy_document.codepipeline_codebuild.json,
-    data.aws_iam_policy_document.codepipeline_kms.json,
     data.aws_iam_policy_document.codepipeline_s3.json,
   ], var.codepipeline_additional_iam)
 }
