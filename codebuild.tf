@@ -1,5 +1,5 @@
 module "codebuild" {
-  source = "github.com/SPHTech-Platform/terraform-aws-codebuild"
+  source = "git@github.com:SPHTech-Platform/terraform-aws-codebuild.git"
 
   name                  = var.codebuild_name
   description           = var.codebuild_description
@@ -15,7 +15,7 @@ module "codebuild" {
   environment_variables = [
     {
       name  = "ENV"
-      value = "sandbox"
+      value = var.env
     }
   ]
 }
