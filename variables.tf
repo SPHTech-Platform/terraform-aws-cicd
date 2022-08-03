@@ -50,11 +50,6 @@ variable "codestar_arn" {
   type        = string
 }
 
-variable "encryption_key_arn" {
-  description = "KMS Key"
-  type        = string
-}
-
 variable "codebuild_compute_type" {
   description = "The Compute Type of the Codebuild Container"
   type        = string

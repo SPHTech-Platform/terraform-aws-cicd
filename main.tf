@@ -5,11 +5,8 @@ resource "aws_codepipeline" "this" {
   artifact_store {
     location = var.artifacts_bucket_name
     type     = "S3"
-
-    encryption_key {
-      id   = var.encryption_key_arn
-      type = "KMS"
-    }
+    #checkov:skip=CKV_AWS_219:Ensure Code Pipeline Artifact store is using a KMS CMK
+    #skipping since pipeline by default uses aws/s3
   }
 
   stage {

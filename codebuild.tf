@@ -6,7 +6,6 @@ module "codebuild" {
   build_image           = "aws/codebuild/standard:5.0"
   buildspec             = "./buildspec.yml"
   artifacts_bucket_name = var.artifacts_bucket_name
-  encryption_key_arn    = var.encryption_key_arn
 
   artifacts = {
     type = "CODEPIPELINE"
