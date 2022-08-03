@@ -11,7 +11,6 @@ variable "repository_branch" {
 variable "repository_owner" {
   description = "GitHub repository owner"
   type        = string
-  default     = "SPHTech"
 }
 
 variable "repository_name" {
