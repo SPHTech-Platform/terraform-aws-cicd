@@ -47,7 +47,6 @@ Terraform module that creates the Codepipeline with source(codestar connection) 
 | <a name="input_codepipeline_additional_stage"></a> [codepipeline\_additional\_stage](#input\_codepipeline\_additional\_stage) | Additional IAM Policy Document for Codepipeline | `list(any)` | `[]` | no |
 | <a name="input_codepipeline_name"></a> [codepipeline\_name](#input\_codepipeline\_name) | Codepipeline name | `string` | n/a | yes |
 | <a name="input_codestar_arn"></a> [codestar\_arn](#input\_codestar\_arn) | Codestar ARN for connecting to Github | `string` | n/a | yes |
-| <a name="input_deployment_bucket_name"></a> [deployment\_bucket\_name](#input\_deployment\_bucket\_name) | Deployment Bucket used by serverless | `string` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | Deployment environment | `string` | n/a | yes |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Repository branch to connect to | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | GitHub repository name | `string` | n/a | yes |

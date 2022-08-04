@@ -23,11 +23,6 @@ variable "artifacts_bucket_name" {
   type        = string
 }
 
-variable "deployment_bucket_name" {
-  description = "Deployment Bucket used by serverless"
-  type        = string
-}
-
 variable "codepipeline_name" {
   description = "Codepipeline name"
   type        = string
