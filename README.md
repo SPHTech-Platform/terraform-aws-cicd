@@ -51,7 +51,7 @@ Terraform module that creates the Codepipeline with source(codestar connection) 
 | <a name="input_env"></a> [env](#input\_env) | Deployment environment | `string` | n/a | yes |
 | <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Repository branch to connect to | `string` | n/a | yes |
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | GitHub repository name | `string` | n/a | yes |
-| <a name="input_repository_owner"></a> [repository\_owner](#input\_repository\_owner) | GitHub repository owner | `string` | `"SPHTech"` | no |
+| <a name="input_repository_owner"></a> [repository\_owner](#input\_repository\_owner) | GitHub repository owner | `string` | n/a | yes |
 
 ## Outputs
 
