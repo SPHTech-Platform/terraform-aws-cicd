@@ -1,7 +1,7 @@
 module "codebuild" {
   source = "github.com/SPHTech-Platform/terraform-aws-codebuild"
 
-  name                  = var.codebuild_name
+  name                  = "${var.codepipeline_name}-build"
   description           = var.codebuild_description
   build_image           = "aws/codebuild/standard:5.0"
   buildspec             = "./buildspec.yml"

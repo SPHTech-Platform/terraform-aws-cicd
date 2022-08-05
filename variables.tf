@@ -34,11 +34,6 @@ variable "codepipeline_name" {
   type        = string
 }
 
-variable "codebuild_name" {
-  description = "Name of the Codebuild"
-  type        = string
-}
-
 variable "codebuild_description" {
   description = "Description of the Codebuild"
   type        = string
