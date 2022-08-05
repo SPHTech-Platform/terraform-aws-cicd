@@ -11,7 +11,6 @@ variable "repository_branch" {
 variable "repository_owner" {
   description = "GitHub repository owner"
   type        = string
-  default     = "SPHTech"
 }
 
 variable "repository_name" {
@@ -21,11 +20,6 @@ variable "repository_name" {
 
 variable "artifacts_bucket_name" {
   description = "S3 Bucket for storing artifacts"
-  type        = string
-}
-
-variable "deployment_bucket_name" {
-  description = "Deployment Bucket used by serverless"
   type        = string
 }
 
@@ -42,11 +36,6 @@ variable "codebuild_description" {
 
 variable "codestar_arn" {
   description = "Codestar ARN for connecting to Github"
-  type        = string
-}
-
-variable "encryption_key_arn" {
-  description = "KMS Key"
   type        = string
 }
 
