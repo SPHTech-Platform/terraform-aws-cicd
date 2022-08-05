@@ -42,7 +42,6 @@ Terraform module that creates the Codepipeline with source(codestar connection) 
 | <a name="input_codebuild_compute_type"></a> [codebuild\_compute\_type](#input\_codebuild\_compute\_type) | The Compute Type of the Codebuild Container | `string` | `"BUILD_GENERAL1_MEDIUM"` | no |
 | <a name="input_codebuild_description"></a> [codebuild\_description](#input\_codebuild\_description) | Description of the Codebuild | `string` | `""` | no |
 | <a name="input_codebuild_image"></a> [codebuild\_image](#input\_codebuild\_image) | Codebuild Image that will be use | `string` | `"aws/codebuild/standard:5.0"` | no |
-| <a name="input_codebuild_name"></a> [codebuild\_name](#input\_codebuild\_name) | Name of the Codebuild | `string` | n/a | yes |
 | <a name="input_codepipeline_additional_iam"></a> [codepipeline\_additional\_iam](#input\_codepipeline\_additional\_iam) | Additional IAM Policy Document needed by Codepipeline | `list(any)` | `[]` | no |
 | <a name="input_codepipeline_additional_stage"></a> [codepipeline\_additional\_stage](#input\_codepipeline\_additional\_stage) | Additional IAM Policy Document for Codepipeline | `list(any)` | `[]` | no |
 | <a name="input_codepipeline_name"></a> [codepipeline\_name](#input\_codepipeline\_name) | Codepipeline name | `string` | n/a | yes |
