@@ -7,7 +7,7 @@ module "codebuild" {
   build_image           = "aws/codebuild/standard:5.0"
   buildspec             = "./buildspec.yml"
   artifacts_bucket_name = var.artifacts_bucket_name
-  additional_iam = var.codebuild_additional_iam
+  additional_iam        = var.codebuild_additional_iam
   artifacts = {
     type = "CODEPIPELINE"
   }
