@@ -7,7 +7,6 @@ module "codebuild" {
   buildspec             = "./buildspec.yml"
   artifacts_bucket_name = var.artifacts_bucket_name
   codebuild_additional_iam = var.codebuild_additional_iam
-  
   artifacts = {
     type = "CODEPIPELINE"
   }
