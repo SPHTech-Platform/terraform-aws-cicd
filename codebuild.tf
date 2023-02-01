@@ -1,6 +1,6 @@
 module "codebuild" {
   source  = "SPHTech-Platform/codebuild/aws"
-  version = "1.1.1"
+  version = "~> 1.1.1"
 
   name                  = var.codebuild_name
   description           = var.codebuild_description

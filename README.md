@@ -18,7 +18,7 @@ Terraform module that creates the Codepipeline with source(codestar connection) 
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_codebuild"></a> [codebuild](#module\_codebuild) | SPHTech-Platform/codebuild/aws | 1.1.1 |
+| <a name="module_codebuild"></a> [codebuild](#module\_codebuild) | SPHTech-Platform/codebuild/aws | ~> 1.1.1 |
 
 ## Resources
 
